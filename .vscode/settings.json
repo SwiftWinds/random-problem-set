@@ -1,5 +1,5 @@
 {
-  "python.pythonPath": "/usr/local/anaconda3/bin/python",
+  "python.pythonPath": "/usr/local/anaconda3/envs/random-problem-set/bin/python3.8",
   "python.linting.pylintEnabled": true,
   "python.linting.enabled": true
 }

@@ -1,7 +1,10 @@
-import sys
-import click
-import random
 import itertools
+import random
+import click
+
+
+def ordinal(num):
+    "%d%s" % (num, "tsnrhtdd"[(num//10 % 10 != 1)*(num % 10 < 4)*num % 10::4])
 
 
 def string_range_to_list(my_str):
