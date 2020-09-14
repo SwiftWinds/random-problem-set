@@ -16,7 +16,7 @@ def string_range_to_list(my_str):
 
 @click.command()
 @click.option('--count', prompt='Number of problems you want',
-              help='Number of random problems to generate.', type=click.INT)
+              help='Number of random problems to generate.', type=click.IntRange(min=0))
 @click.option('--file', prompt='File describing problem set',
               help='Input file describing the problem set.', type=click.File())
 def generate_random_problems(count, file):
@@ -33,6 +33,11 @@ def generate_random_problems(count, file):
                 .flatten()
                 .to_list())
 
+    if count > len(problems):
+        raise click.BadOptionUsage(
+            option_name="count",
+            message=f"{count} is greater than the maximum valid value {len(problems)}, "
+            f"the number of problems described by {file.name}")
     random_problem_set = random.sample(problems, count)
     for idx, problem in enumerate(random_problem_set):
         click.echo(f"{ordinal(idx + 1)} problem: {problem}")
