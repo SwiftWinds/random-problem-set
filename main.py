@@ -9,15 +9,18 @@ def ordinal(num):
 
 def string_range_to_list(my_str):
     temp = [(lambda sub: range(sub[0], sub[-1] + 1))
-            (list(map(int, ele.split('-')))) for ele in my_str.split(', ')]
+            (seq(ele.split('-')).map(int)) for ele in my_str.split(', ')]
     res = [b for a in temp for b in a]
     return res
 
 
-@click.command()
-@click.option('--count', prompt='Number of problems you want',
+CONTEXT_SETTINGS = dict(help_option_names=['-h', '--help'])
+
+
+@click.command(context_settings=CONTEXT_SETTINGS)
+@click.option('-c', '--count', prompt='Number of problems you want',
               help='Number of random problems to generate.', type=click.IntRange(min=0))
-@click.option('--file', prompt='File describing problem set',
+@click.option('-f', '--file', prompt='File describing problem set',
               help='Input file describing the problem set.', type=click.File())
 def generate_random_problems(count, file):
     """Simple program that generates COUNT random problems of a problem set described by FILE."""
