@@ -3,21 +3,37 @@ channels:
   - anaconda
   - defaults
 dependencies:
+  - appdirs=1.4.4=py_0
+  - astroid=2.4.2=py38_0
+  - attrs=20.2.0=py_0
+  - black=19.10b0=py_0
   - ca-certificates=2020.10.14=0
   - certifi=2020.6.20=py38_0
   - click=7.1.2=py_0
+  - isort=5.6.4=py_0
+  - lazy-object-proxy=1.4.3=py38h1de35cc_0
   - libcxx=10.0.0=1
   - libedit=3.1.20191231=h1de35cc_1
   - libffi=3.3=hb1e8313_2
+  - mccabe=0.6.1=py38_1
+  - mypy_extensions=0.4.3=py38_0
   - ncurses=6.2=h0a44026_1
   - openssl=1.1.1h=haf1e3a3_0
+  - pathspec=0.7.0=py_0
   - pip=20.2.3=py38_0
+  - pylint=2.6.0=py38_0
   - python=3.8.5=h26836e1_1
   - readline=8.0=h1de35cc_0
+  - regex=2020.10.15=py38haf1e3a3_0
   - setuptools=50.3.0=py38h0dc7051_1
+  - six=1.15.0=py_0
   - sqlite=3.33.0=hffcf06c_0
   - tk=8.6.10=hb0a8c7a_0
+  - toml=0.10.1=py_0
+  - typed-ast=1.4.1=py38h1de35cc_0
+  - typing_extensions=3.7.4.3=py_0
   - wheel=0.35.1=py_0
+  - wrapt=1.11.2=py38h1de35cc_0
   - xz=5.2.5=h1de35cc_0
   - zlib=1.2.11=h1de35cc_3
   - pip:
