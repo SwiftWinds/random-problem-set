@@ -4,7 +4,7 @@ from functional import seq
 
 
 def ordinal(num):
-    return "%d%s" % (num, "tsnrhtdd"[(num//10 % 10 != 1)*(num % 10 < 4)*num % 10::4])
+    return "%d%s" % (num, "tsnrhtdd"[(num // 10 % 10 != 1) * (num % 10 < 4) * num % 10::4])
 
 
 def string_range_to_list(my_str):
@@ -31,7 +31,7 @@ def generate_random_problems(count, file):
                 .map(lambda chapter: [chapter[0], string_range_to_list(chapter[1])])
                 .map(lambda chapter: [chapter[0],
                                       seq(chapter[1])
-                                      .map(lambda problem: f"{chapter[0]} #{problem}")])
+                     .map(lambda problem: f"{chapter[0]} #{problem}")])
                 .map(lambda chapter: chapter[1])
                 .flatten()
                 .to_list())
@@ -40,7 +40,7 @@ def generate_random_problems(count, file):
         raise click.BadOptionUsage(
             option_name="count",
             message=f"{count} is greater than the maximum valid value {len(problems)}, "
-            f"the number of problems described by {file.name}")
+                    f"the number of problems described by {file.name}")
     random_problem_set = random.sample(problems, count)
     for idx, problem in enumerate(random_problem_set):
         click.echo(f"{ordinal(idx + 1)} problem: {problem}")
