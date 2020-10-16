@@ -1,6 +1,5 @@
 name: random-problem-set
 channels:
-  - anaconda
   - defaults
 dependencies:
   - appdirs=1.4.4=py_0
